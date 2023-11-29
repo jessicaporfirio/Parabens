@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido</title>
+
+    <!--personalizando o painel-->
+
+    <style>
+        body {
+            background: #7398e3;
+        
+                        }
+
+        .painel{
+            margin: auto;
+            background-color: white;
+            width: 500px;
+            height: 500px;
+            border-radius: 20px;
+            text-align: center;
+            padding: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        #sim{
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin-left: -50px;
+            }
+            #nao{
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin-left: 10px;
+
+            }
+        
+    </style>
+</head>
+<body>
+        <!-- painel para ter um quadrado no meio-->
+    <div class="painel">
+        
+
+            <img src="https://gifman.net/wp-content/uploads/2019/06/ursinhos-fofos-coracoes.gif" alt="">
+            <h1>Pra viver comigo pro resto da vida, tem que estar disposto a me aturar. Topa? </h1>
+
+
+
+           <a href="https://youtu.be/0mJMW2CzTiA?feature=shared"> <button id="sim">Sim!</button></a>
+            <button onmouseover="fuja()" id="nao">Não!</button>
+
+    </div>
+
+    <script>
+        //função que vai ser executada quando o botão for clicado
+        function fuja(){
+
+            var botaoNao = document.getElementById("nao")  
+            // funções para o botão não sair da tela.
+
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+
+            var maxX = larguraJanela - botaoNao.offsetWidth;
+            var maxY = alturaJanela - botaoNao.offsetHeight;
+
+            //função aleatória na tela
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+
+            }
+    </script>
+    
+</body>
+</html>
